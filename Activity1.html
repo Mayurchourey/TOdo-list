@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-color: aliceblue;
+    }
+
+
+    #NV1 {
+        width: 100%;
+        height: 10vh;
+        background-color: aqua;
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 1px 1px 10px 5px blanchedalmond;
+    }
+</style>
+<body>
+    <nav id="NV1">
+        <h1>TO-DO-LIST WebApp</h1>
+    </nav>
+    <main style="margin-top: 9.5%;">
+        <h3 style="margin-left: 2%;">Add your To do task here</h3>
+
+        <form id="Myform">
+            <input style="margin-left: 2%;" type="text" id="myInput">
+            <button>Add</button>
+        </form>
+        <h3>To do list</h3>
+        
+    </main>
+    <script> 
+        var myForm = document.getElementById("myForm");
+        var myInput = document.getElementById("myInput");
+        var myItem = document.getElementById("myItem");
+
+        myForm.addEventListener ("submit",
+            function(event) {
+                event.preventDefault()
+                createItem(myInput.va)
+            })
+
+            function createItem(inputItems) {
+                var Items = `<li>${inputItems}
+                    <button onclick = "deleteElement(this)">delete</button></li>`
+                    myItem.insertAdjacentHTML("beforeend" , Items)
+                    myInput.value = ""
+                    myInput.focus()
+            }
+
+            function deleteElement (ETD) {
+                ETD.parentElement.remove()
+            }
+       
+    </script>
+</body>
+</html>
